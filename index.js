@@ -32,7 +32,7 @@ module.exports = function (app, mongoose) {
             }
             // Group routes by resource name
             routes = _.groupBy(routes, function (route) {
-                return route.path.split("/")[1];
+                return route.path.split("/")[1]||'*';
             });
 
             // Skip the routes to be used internally by this module
